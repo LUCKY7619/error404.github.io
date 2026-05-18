@@ -1,0 +1,1 @@
+export default function(){return <div className="grid md:grid-cols-2 gap-4">{['Total Donors','Emergency Requests','Blood Group Analytics','Nearby Donors Map'].map(x=><div key={x} className="glass p-6 min-h-40"><h3 className="text-xl font-bold text-red-300">{x}</h3><p className="mt-2 text-white/80">Live metrics and visualizations integrate here.</p></div>)}</div>}
