@@ -1,0 +1,5 @@
+import { useEffect, useState } from 'react'; import api from '../services/api';
+export default function(){const [filters,set]=useState({bloodGroup:'',city:'',state:'',availabilityStatus:''}); const [donors,setDonors]=useState([]);
+const fetch=async()=>{const {data}=await api.get('/donors',{params:filters});setDonors(data);}; useEffect(()=>{fetch();},[]);
+return <div><div className="glass p-4 grid md:grid-cols-5 gap-2">{Object.keys(filters).map(k=><input key={k} className="bg-black/30 p-2 rounded" placeholder={k} onChange={e=>set({...filters,[k]:e.target.value})}/>)}<button onClick={fetch} className="bg-crimson rounded p-2">Search</button></div>
+<div className="grid md:grid-cols-3 gap-4 mt-4">{donors.map(d=><div key={d._id} className="glass p-4"><p className="text-3xl font-black text-red-300">{d.bloodGroup}</p><p>{d.fullName}</p><p>{d.city}, {d.state}</p><p className={d.availabilityStatus==='available'?'text-green-300':'text-yellow-300'}>{d.availabilityStatus}</p><button className="mt-2 px-3 py-2 bg-red-700 rounded">Request Contact</button></div>)}</div></div>}

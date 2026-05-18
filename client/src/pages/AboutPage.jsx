@@ -1,0 +1,1 @@
+export default function(){return <div className="glass p-6"><h2 className="text-3xl font-bold text-red-300">About LifeDrop</h2><p className="mt-3">LifeDrop is a real-time donor matching platform designed for urgent, life-saving coordination between citizens, hospitals, and emergency responders.</p></div>}

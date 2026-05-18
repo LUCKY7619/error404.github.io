@@ -1,0 +1,1 @@
+export default function(){return <div className="space-y-4">{['Manage users','Ban fake accounts','Monitor emergency requests','Export donor data'].map(x=><div key={x} className="glass p-4">{x}</div>)}</div>}
